@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TabelaLancamentosComponent } from './tabela-lancamentos/tabela-lancamentos.component';
 import { HttpClientModule } from '@angular/common/http';
-//import { NgxChartsModule }from '@swimlane/ngx-charts';
+import { NgxChartsModule }from '@swimlane/ngx-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,10 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule/*,
-    NgxChartsModule*/
+    HttpClientModule,
+    NgxChartsModule,
+    BrowserAnimationsModule,
+    StoreModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]

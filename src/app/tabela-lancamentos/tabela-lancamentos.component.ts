@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { LancamentoService } from '../lancamento.service';
 
 @Component({
@@ -11,13 +13,8 @@ export class TabelaLancamentosComponent implements OnInit {
   public lancamentos : any;
   public itens : any[];
   public lancamentoService : LancamentoService;
-  saleData = [
-    { name: "Mobiles", value: 105000 },
-    { name: "Laptop", value: 55000 },
-    { name: "AC", value: 15000 },
-    { name: "Headset", value: 150000 },
-    { name: "Fridge", value: 20000 }
-  ];
+  
+  chartData : any[];
 
   constructor(lancamentoService: LancamentoService) { 
     this.lancamentoService = lancamentoService;
@@ -29,14 +26,22 @@ export class TabelaLancamentosComponent implements OnInit {
 
     this.getLancamentos();
 
-
-
-
-  }
+    }
 
   getLancamentos(): void {
+    this.chartData = [];
     this.lancamentoService.getLancamentos()
-        .subscribe(lancamentos => this.itens = lancamentos.listaControleLancamento);
+        .subscribe(lancamentos => {this.itens = lancamentos.listaControleLancamento;
+          this.itens.forEach((item) => {
+            this.chartData.push({name: item.nomeBanco, value: item.valorLancamentoRemessa});
+          
+        });
+        console.log(this.chartData);
+        });
+  }
+
+  getChartData() : void{
+    
   }
 
 }
