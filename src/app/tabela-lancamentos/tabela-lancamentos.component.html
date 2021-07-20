@@ -13,7 +13,7 @@
     </thead>
     <tbody>
 
-      <tr *ngFor="let lancamento of itens">
+      <tr *ngFor="let lancamento of (itens | async)">
         <th scope="row">1</th>
         <td>{{lancamento.dataLancamentoContaCorrenteCliente}}</td>
         <td>{{lancamento.descricaoGrupoPagamento}}</td>
@@ -27,9 +27,9 @@
     </tbody>
   </table>
 
-  <p>chart - {{chartData}}</p>
+  <p></p>
   <ngx-charts-pie-chart 
-    [results]="chartData"
+    [results]="chartData$ | async"
     [legend]="true"
     [legendTitle]="'Lançamentos x Bancos'" 
     [view]="[1000,300]"

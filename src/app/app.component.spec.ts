@@ -26,10 +26,5 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('controle-lancamentos');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('controle-lancamentos app is running!');
-  });
+ 
 });

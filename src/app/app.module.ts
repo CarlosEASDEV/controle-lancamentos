@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxChartsModule }from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
+import { chartDataReducer } from './ngrx';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { StoreModule } from '@ngrx/store';
     HttpClientModule,
     NgxChartsModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({})
+    StoreModule.forRoot({chartData : chartDataReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
