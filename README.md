@@ -2,6 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.26.
 
+## Antes de executar Este projeto , startar o backend da aplicação https://github.com/CarlosEASDEV/backend-controle-lancamentos#backend-controle-lancamentos
+
+## Para Executar
+
+  npm install
+  
+  npm start
+
+## Para testar
+
+  npm test
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
